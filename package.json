@@ -1,19 +1,24 @@
 {
   "name": "flogg",
-  "version": "1.0.1",
+  "version": "1.1.4",
   "description": "The logger we use @ faable.com based in debug module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/flogg.js",
+  "types": "dist/flogg.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "DEBUG=api:* node test/useLog"
   },
   "author": "Marc Pomar Torres",
   "license": "ISC",
   "dependencies": {
-    "typescript": "^3.2.2"
+    "typescript": "^3.2.2",
+    "debug": "^4.1.0"
   },
   "devDependencies":{
-    "@types/node": "^10.12.15",
-    "debug": "^4.1.0"
+    "@types/node": "^10.12.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boyander/flogg.git"
   }
 }
