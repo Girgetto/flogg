@@ -1,20 +1,19 @@
 {
-  "name": "flog",
-  "version": "1.0.0",
+  "name": "flogg",
+  "version": "1.0.1",
   "description": "The logger we use @ faable.com based in debug module",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "types": "./types.d.ts",
-  "config": {
-    "exportAliases": {
-      "config": "./config.js"
-    }
+    "build": "tsc"
   },
   "author": "Marc Pomar Torres",
   "license": "ISC",
   "dependencies": {
+    "typescript": "^3.2.2"
+  },
+  "devDependencies":{
+    "@types/node": "^10.12.15",
     "debug": "^4.1.0"
   }
 }

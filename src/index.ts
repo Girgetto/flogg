@@ -1,25 +1,36 @@
 /**
  * Faable.com Miniloger with colors
  */
-const path = require('path');
-const {getLog} = require('./config');
+import path from 'path';
+import {getLog, setLog} from './config';
 
-const logname = path.basename(module.parent.filename).split('.')[0];
+// Setup log name
+let logname = 'log';
+if(module.parent){
+    path.basename(module.parent.filename).split('.')[0];
+}
 
 delete require.cache[__filename];
 
-const LogLevel = {
-    DEBUG:{label:'debug', color:'blue'},
-    WARN:{label:'warn', color:'yellow'},
-    ERROR:{label:'error', color:'red'},
-    LOG:{label:'log', color:'green'}
+enum LogLevel {
+    DEBUG = 'DEBUG',
+    WARN = 'WARN',
+    ERROR = 'ERROR',
+    LOG = 'LOG'
 }
 
-const getLoggerWithName = (level) => getLog(`${level.label}:${logname}`);
+class LogLevelDecoder {
+    static DEBUG = {label:'debug', color:'blue'};
+    static WARN = {label:'warn', color:'yellow'};
+    static ERROR = {label:'error', color:'red'};
+    static LOG = {label:'log', color:'green'};
+}
 
-module.exports = {
-    debug: (m) => getLoggerWithName(LogLevel.DEBUG)(m),
-    log: (m) => getLoggerWithName(LogLevel.LOG)(m),
-    warn: (m) => getLoggerWithName(LogLevel.WARN)(m),
-    err: (m) => getLoggerWithName(LogLevel.ERROR)(m),
-};
+const getLoggerWithName = (level:LogLevel) => (m:string) => getLog(`${LogLevelDecoder[level].label}:${logname}`)(m);
+
+export const debug = getLoggerWithName(LogLevel.DEBUG);
+export const log = getLoggerWithName(LogLevel.LOG);
+export const warn = getLoggerWithName(LogLevel.WARN);
+export const err = getLoggerWithName(LogLevel.ERROR);
+
+export {getLog, setLog};
