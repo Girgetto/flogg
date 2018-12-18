@@ -1,7 +1,6 @@
 
 [![npm version](https://badge.fury.io/js/flogg.svg)](https://badge.fury.io/js/flogg)
-
-[![npm install](https://nodei.co/npm/ender.png?mini=true)]
+![npm install](https://nodei.co/npm/ender.png?mini=true)
 
 # Flogg - Faable logger for node
 
