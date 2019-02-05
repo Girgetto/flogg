@@ -2,7 +2,7 @@
 # Flogg - Faable logger for node
 
 [![npm version](https://badge.fury.io/js/flogg.svg)](https://badge.fury.io/js/flogg)
-![npm install](https://nodei.co/npm/ender.png?mini=true)
+![npm install](https://nodei.co/npm/@faable/flogg.png?mini=true)
 
 Faable.com logger for node.js that uses `debug` module and customizes it for log file scoping.
 

@@ -1,5 +1,5 @@
 {
-  "name": "flogg",
+  "name": "@faable/flogg",
   "version": "1.1.4",
   "description": "The logger we use @ faable.com based in debug module",
   "main": "dist/flogg.js",
