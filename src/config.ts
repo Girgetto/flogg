@@ -1,17 +1,14 @@
 const debug = require("debug");
 
-let log: any;
-global.log = undefined;
-
 export const setLog = (prefix: string): any => {
   global.log = debug(prefix);
 };
 
 export const getLog = (extendLevel: string): any => {
-  if (!log) {
+  if (!global.log) {
     setLog(`app:${extendLevel}`);
   }
-  return log.extend(extendLevel);
+  return global.log.extend(extendLevel);
 };
 
 enum LogLevel {
