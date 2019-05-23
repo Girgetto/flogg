@@ -23,7 +23,7 @@ In `package.json` set the `DEBUG` env variable:
 Then before doing anything require flog and set the log prefix:
 
 ```javascript
-const { setLog } = require("../dist/flogg");
+const { setLog } = require("@faable/flogg");
 
 // setLog should be called only once
 setLog("api");
@@ -32,7 +32,7 @@ setLog("api");
 In all other files, just require `flogg` and it will set automatically the log prefix based on filename. Example for a file named `microscope.js`:
 
 ```javascript
-const { debug } = require("../dist/flogg");
+const { debug } = require("@faable/flogg");
 debug("¡Hi!");
 ```
 
